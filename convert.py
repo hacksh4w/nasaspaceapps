@@ -43,7 +43,7 @@ with open(gmat_op, 'r') as gmat_file:
         trajectory_data.append(time_step)
 
 json_data = {
-    "trajectory" :trajectory_data
+    "coordinates" :trajectory_data
 }
 
 with open(json_output, 'w') as json_file:

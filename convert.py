@@ -1,13 +1,12 @@
 import json
 from datetime import datetime
 
-# Replace this with the actual path to your GMAT output file
-input_gmat_file = '/Users/mrina/Desktop/ReportFileData.txt'
-output_json_file = '/Users/mrina/Desktop/trajectory.json'
+gmat_op = '/folder/ReportFileData.txt'
+json_output = '/folder/trajectory.json'
 
 trajectory_data = []
 
-with open(input_gmat_file, 'r') as gmat_file:
+with open(gmat_op, 'r') as gmat_file:
     # Skip the header
     next(gmat_file)
     
@@ -37,7 +36,7 @@ json_data = {
     "trajectory": trajectory_data
 }
 
-with open(output_json_file, 'w') as json_file:
+with open(json_output, 'w') as json_file:
     json.dump(json_data, json_file, indent=2)
 
-print(f'Trajectory data has been successfully converted to {output_json_file}')
+print(f'Trajectory data has been successfully converted to {json_output}')
